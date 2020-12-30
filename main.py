@@ -12,6 +12,10 @@ res = 1000 #resistor ohms
 
 pin1 = 17
 pin2 = 22
+ledpin = 18
+
+led = GPIO.PWM(ledpin, 500)
+led.start(100)
 
 def charge_cycle():
     GPIO.setup(pin1, GPIO.IN)
@@ -27,7 +31,7 @@ def charge_reading():
     while GPIO.input(pin2) == False:
         ...
     time2 = time.time()
-    return (t2 - t1) * 1000000
+    return (t2 - t1) * 10000
 
 def read():
     charge_cycle()
@@ -45,17 +49,36 @@ def read_resistor():
     r = (T / C) - res
     return r
 
+def calculate_brightness():
+    res_reading = int(read_resistor())
+    brightness_set_value = int(res_reading-35)
+    if brightness_set_value < 0:
+        brightness_set_value = 0
+    if brightness_set_value > 100:
+        brightness_set_value = 100
+    return brightness_set_value
+
+def update_brightness():
+    brightness = calculate_brightness()
+    GPIO.ChangeDutyCycle(brightness)
+
 running = True
 
 try:
     while running == True:
-        print(read_resistance()) #debug
-        time.sleep(0.5)
+        update_brightness()
+        time.sleep(0.1)
         
 except KeyboardInterrupt:
+    running = False
+    
+except:
+    print("An error occured.")
+    print("The program is being closed to prevent damage to the components.")
     running = False
     
 finally:
     print("Cleaning up...")
     GPIO.cleanup()
+
 
