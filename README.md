@@ -12,7 +12,7 @@ Run the following command in the terminal when you are in the same directory as 
 - Female to Male Jumper Wire: 22 -> b4
 - 1k Ohm Resistor: d1 -> f1
 - 1k Ohm Resistor: d4 -> f4
-- 330 nF Capacitor: h4 (-) -> j5 (+)
+- 330 uF Capacitor: h4 (-) -> j5 (+)
 - Photoresistor: j1 -> j4
 - Female to Male Jumper Wire: 18 -> a10
 - Female to Male Jumper Wire: GND -> a17
