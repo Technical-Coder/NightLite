@@ -2,7 +2,7 @@
 A light that adjusts its brightness based on how bright/dark it is.
 
 ## Running
-Run the command ```sudo python3 main.py``` when you are in the same directory as the program.
+Run the following command in the terminal when you are in the same directory as the program: ```sudo python3 main.py```.
 
 ## The Wiring
 ### Assuming you are using a half-size breadboard (I'm not sure if the sizes make a difference) that is placed vertically, with a1 being in the top left:
