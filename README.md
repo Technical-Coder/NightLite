@@ -1,5 +1,5 @@
 # NightLite
-A light that adjusts its brightness based on how bright/dark it is.
+A light powered by a Raspberry Pi that adjusts its brightness based on how bright/dark it is.
 
 ## Running
 Run the following command in the terminal when you are in the same directory as the program: ```sudo python3 main.py```.
