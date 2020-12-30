@@ -16,4 +16,4 @@ A light that adjusts its brightness based on how bright/dark it is.
 - 1k Ohm Resistor: c10 -> c15
 - White LED: e15 (+) -> e17 (-)
 ---
-### Double-check your wiring. It's really easy to mix up this stuff, and I do it all the time too. If you find something wrong with this wiring, please let me know immediately in the issures section.
+### Double-check your wiring. It's really easy to mix up this stuff, and I do it all the time too. If you find something wrong with this wiring, please let me know immediately in the issues section.
