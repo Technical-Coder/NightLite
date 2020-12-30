@@ -14,6 +14,7 @@ pin1 = 17
 pin2 = 22
 ledpin = 18
 
+GPIO.setup(ledpin, GPIO.OUT)
 led = GPIO.PWM(ledpin, 500)
 led.start(100)
 
@@ -39,7 +40,7 @@ def read():
     charge_cycle()
     return time
 
-def read_resistor():
+def read_photoresistor():
     n = 20
     tot = 0;
     for i in range(1, n):
@@ -50,7 +51,7 @@ def read_resistor():
     return r
 
 def calculate_brightness():
-    res_reading = int(read_resistor())
+    res_reading = int(read_photoresistor())
     brightness_set_value = int(res_reading-35)
     if brightness_set_value < 0:
         brightness_set_value = 0
